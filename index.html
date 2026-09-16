@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Institute for Complex Systems</title>
+  <style>
+    :root {
+      --bg-canvas: #f6f6f4;
+      --card-surface: #ffffff;
+      --text-prime: #111111;
+      --text-sub: #444444;
+      --text-light: #767676;
+      --border-hairline: rgba(0, 0, 0, 0.08);
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-prime);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      padding: 0 1.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4.5rem 0 5rem 0;
+    }
+
+    /* Top Metadata Bar - Minimal, Right-Aligned Academic Anchor */
+    .meta-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid var(--border-hairline);
+      margin-bottom: 3rem;
+    }
+
+    /* Header & Algorithmic Horizon Graphic */
+    header {
+      margin-bottom: 3.5rem;
+    }
+
+    .horizon-visual {
+      width: 100%;
+      height: 68px;
+      margin-bottom: 2.2rem;
+      opacity: 0.85;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-prime);
+      line-height: 1.22;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.9rem;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--text-sub);
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    /* Content Sections */
+    section {
+      margin-bottom: 3.2rem;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--text-light);
+      margin-bottom: 1.1rem;
+      display: block;
+    }
+
+    p.lead-text {
+      font-size: 1.02rem;
+      color: var(--text-sub);
+      margin-bottom: 1.1rem;
+      line-height: 1.75;
+    }
+
+    /* Research Pillars - Clean Hairline SpecTech Card Style */
+    .focus-group {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 1.4rem;
+    }
+
+    .focus-item {
+      background: var(--card-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: 4px;
+      padding: 1.6rem 1.8rem;
+      transition: border-color 0.2s ease;
+    }
+
+    .focus-item:hover {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .focus-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-prime);
+      margin-bottom: 0.55rem;
+      letter-spacing: -0.01em;
+    }
+
+    .focus-item p {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    /* Academic Inquiries Box */
+    .contact-block {
+      background: var(--card-surface);
+      border: 1px solid var(--border-hairline);
+      border-radius: 4px;
+      padding: 1.5rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .contact-info a {
+      color: var(--text-prime);
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-info a:hover {
+      border-bottom-color: var(--text-prime);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 2rem;
+      margin-top: 4.5rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-family: var(--font-mono);
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <!-- Top Metadata Bar -->
+    <div class="meta-bar">
+      <span>Auckland, New Zealand</span>
+    </div>
+
+    <!-- Header with Algorithmic Horizon Graphic -->
+    <header>
+      <div class="horizon-visual">
+        <svg viewBox="0 0 740 68" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+          <!-- Precise Mathematical Horizon Line & Transition Curve -->
+          <line x1="0" y1="50" x2="740" y2="50" stroke="#111111" stroke-width="1.2" stroke-opacity="0.85"/>
+          <path d="M0 50 C 220 50, 280 18, 370 18 C 460 18, 520 50, 740 50" stroke="#111111" stroke-width="0.8" stroke-dasharray="3 3" stroke-opacity="0.45"/>
+          <circle cx="370" cy="18" r="3.5" fill="#111111" fill-opacity="0.85"/>
+        </svg>
+      </div>
+      <h1>Horizon Institute for Complex Systems</h1>
+      <div class="tagline">Non-equilibrium statistical physics, theoretical biophysics, and computational modeling.</div>
+    </header>
+
+    <!-- About Section -->
+    <section>
+      <span class="section-label">[ 01 &bull; About the Institute ]</span>
+      <p class="lead-text">
+        The Horizon Institute for Complex Systems is an independent academic research initiative based in Auckland, New Zealand. The institute is dedicated to foundational and computational research at the interface of non-equilibrium statistical physics, theoretical biophysics, and complex dynamical systems.
+      </p>
+      <p class="lead-text">
+        Our objective is to advance fundamental physical principles and quantitative modeling frameworks to investigate state transitions and multi-scale dynamics across complex physical and biological environments.
+      </p>
+    </section>
+
+    <!-- Research Pillars -->
+    <section>
+      <span class="section-label">[ 02 &bull; Research Focus ]</span>
+      <div class="focus-group">
+        <div class="focus-item">
+          <h3>Non-Equilibrium Physics & Statistical Foundations</h3>
+          <p>Formulating rigorous mathematical and physical principles to investigate energy dissipation, fluctuation phenomena, and state transitions in complex open systems far from thermodynamic equilibrium.</p>
+        </div>
+        <div class="focus-item">
+          <h3>Theoretical Biophysics & Physiological Dynamics</h3>
+          <p>Investigating multi-scale coupling mechanisms, regulatory dynamics, and functional stability across complex biological structures and integrative physiological systems.</p>
+        </div>
+        <div class="focus-item">
+          <h3>Computational Frameworks & Empirical Data Validation</h3>
+          <p>Developing reproducible numerical frameworks to validate theoretical models across complex real-world dynamics, spanning open empirical repositories, observational datasets, and biomedical databases.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academic Inquiries -->
+<section>
+  <span class="section-label">[ 03 &bull; Academic Inquiries ]</span>
+  <div class="contact-block">
+    <div style="font-size: 0.95rem; color: var(--text-sub);">
+      For scientific correspondence, collaborative research, or academic verification:
+    </div>
+    <div class="contact-info">
+      <span style="font-family: var(--font-mono); font-size: 0.92rem; color: var(--text-prime); user-select: all;">
+        shengyu.li@hics-research.org
+      </span>
+    </div>
+  </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+      <div>&copy; 2026 Horizon Institute for Complex Systems.</div>
+      <div>Auckland, New Zealand.</div>
+    </footer>
+  </div>
+
+</body>
+</html>
